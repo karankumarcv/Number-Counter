@@ -31,6 +31,7 @@ body {
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -49,6 +50,7 @@ body {
     font-weight: 800;
     color: #fff;
     line-height: 1.7;
+    user-select: none;
 }
 
 .number-list .active {
@@ -65,4 +67,12 @@ body {
     width: 100%;
     min-height: 450px;
     position: absolute
+}
+@media screen and (max-width:640px) {
+    body{
+        background-color: #384656;
+    }
+    .container{
+        height: 100vh;
+    }
 }
