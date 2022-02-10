@@ -1,0 +1,68 @@
+:root {}
+
+body {
+    background-color: #34404E;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin: 0px;
+    height: 85vh;
+    width: 350px;
+    background-color: #384656;
+    border-radius: 30px;
+    display: grid;
+    grid-template-rows: 15% 70% 15%;
+    position: relative;
+}
+
+.controller {
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.number-list {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    transition: 1s;
+    
+}
+
+.number-list::-webkit-scrollbar {
+    display: none;
+}
+
+.number-list p {
+    margin: 0px;
+    font-size: 4rem;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.7;
+}
+
+.number-list .active {
+    margin: 0px;
+    font-size: 8rem;
+    display: flex;
+    align-items: center;
+}
+
+.number-list:before {
+    content: "";
+    background: rgb(56, 70, 86);
+    background: linear-gradient(180deg, rgba(56, 70, 86, 1) 0%, rgba(56, 70, 86, 0) 40%, rgba(56, 70, 86, 0) 67%, rgba(56, 70, 86, 1) 100%);
+    width: 100%;
+    min-height: 450px;
+    position: absolute
+}
