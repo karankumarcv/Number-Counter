@@ -39,11 +39,13 @@ upperBtn.addEventListener('click', function () {
     toggleNumberActive()
     audioSound.play();
 })
-// Subtract the number on scroll
+
+// Subtract the number on up key
 
 window.addEventListener('keyup', function (e) {
     console.log(e.code);
     if (e.code == 'ArrowUp') {
+        // scrollListdownward()
         delNumber();
         toggleNumberDeactive()
         toggleNumberActive()
@@ -52,6 +54,12 @@ window.addEventListener('keyup', function (e) {
     }
 })
 
+// Disable the mouse wheel on numbers
+
+numberList.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+})
 
 function addNumber() {
     const newNum = document.createElement('p')
@@ -85,5 +93,5 @@ function toggleNumberDeactive() {
 }
 
 function scrollListdownward() {
-    numberList.scrollBy(0, -128)
+    numberList.scrollBy(0, -60)
 }
