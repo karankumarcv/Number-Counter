@@ -34,10 +34,14 @@ window.addEventListener('keyup', function (e) {
 
 // Subtract the number on click
 upperBtn.addEventListener('click', function () {
-    delNumber();
-    toggleNumberDeactive()
-    toggleNumberActive()
-    audioSound.play();
+
+    if (numberList.children.length > 2) {
+        delNumber();
+        toggleNumberDeactive()
+        toggleNumberActive()
+        audioSound.play();
+    }
+
 })
 
 // Subtract the number on up key
@@ -45,11 +49,13 @@ upperBtn.addEventListener('click', function () {
 window.addEventListener('keyup', function (e) {
     console.log(e.code);
     if (e.code == 'ArrowUp') {
-        // scrollListdownward()
-        delNumber();
-        toggleNumberDeactive()
-        toggleNumberActive()
-        audioSound.play();
+        if (numberList.children.length > 2) {
+            delNumber();
+            toggleNumberDeactive()
+            toggleNumberActive()
+            audioSound.play();
+        }
+
 
     }
 })
@@ -83,13 +89,15 @@ function scrollListUpward() {
 // Decrement
 function delNumber() {
     numberList.lastElementChild.remove()
+
+
 }
 
 function toggleNumberDeactive() {
     let numberListChildrens = numberList.children;
-    let currentActiveNumber = numberListChildrens[eval((numberList.children.length) - 1)];
-    currentActiveNumber.style.transition = "0.5s";
-    currentActiveNumber.classList.toggle('active');
+    let currentDeactiveNumber = numberListChildrens[eval((numberList.children.length) - 1)];
+    currentDeactiveNumber.style.transition = "0.7s";
+    currentDeactiveNumber.classList.toggle('active');
 }
 
 function scrollListdownward() {
