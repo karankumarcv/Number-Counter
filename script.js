@@ -1,7 +1,7 @@
 let upperBtn = document.querySelector('#upper-controller')
 let lowerBtn = document.querySelector('#lower-controller')
 let numberList = document.querySelector('.number-list');
-var audioSound = new Audio('./sound.wav')
+let audioSound = new Audio('./sound.wav')
 // Increment
 
 // Add the number on click
@@ -17,7 +17,6 @@ lowerBtn.addEventListener('click', function () {
 // Add the number on click
 
 window.addEventListener('keyup', function (e) {
-    console.log(e.code);
     if (e.code == 'ArrowDown') {
         toggleNumberActive();
         addNumber();
@@ -27,7 +26,6 @@ window.addEventListener('keyup', function (e) {
 
     }
 })
-
 
 
 // Decrement
@@ -100,6 +98,3 @@ function toggleNumberDeactive() {
     currentDeactiveNumber.classList.toggle('active');
 }
 
-function scrollListdownward() {
-    numberList.scrollBy(0, -60)
-}
